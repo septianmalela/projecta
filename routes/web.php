@@ -41,6 +41,10 @@ route::get('/logout','AuthController@logout');
 
 route::group(['middleware' => 'auth'], function(){
 
+//perhitungan support & confidence
+route::get('/support/confidence','FpController@supportconfidence');
+route::get('/support','FpController@support');
+
 //crud menambahkan Statement
 Route::get('/statement', 'StatementController@index');
 Route::post('/statement/create', 'StatementController@create');

@@ -24,27 +24,23 @@
 		    </div>
 		  </div>
 		  <div class="form-group">
-		  	<div class="text-center">
-		  		<h4 class="text-uppercase">Nama -> {{$b->nama_lengkap}}</h4>
-		  	</div>
-		  	<div class="text-center">
-		  		<h4 class="text-uppercase">Pilihan Ruangan -> {{$b->pilihan_ruangan}}</h4>
-		  	</div>
-		  	<div class="text-center">
-		  		<h4 class="text-uppercase">Warna Favorite -> {{$b->warna_favorite}}</h4>
-		  	</div>
-		  	<!-- <div class="text-center">
-		  		<h4 class="text-uppercase">Support -> {{$b->support}}</h4>
-		  	</div>
-		  	<div class="text-center">
-		  		<h4 class="text-uppercase">Confidence -> {{$b->confidence}}</h4>
-		  	</div> -->
-		  	<div class="text-center">
-		  		<h4 class="text-uppercase">Support AUB->{{$b->support}}%</h4>
-		  	</div>
-		  	<div class="text-center">
-		  		<h4 class="text-uppercase">CONFIDENCE->{{$b->confidence}}%</h4>
-		  	</div>
+		  	<table class="table table-borderless">
+			    <tr>
+			      <th scope="col" class="text-uppercase">Nama</th>
+			      <th scope="col" class="text-uppercase">Pilihan Ruangan</th>
+			      <th scope="col" class="text-uppercase">Warna Favorite</th>
+			      <th scope="col" class="text-uppercase">Support</th>
+			      <th scope="col" class="text-uppercase">CONFIDENCE</th>
+			    </tr>
+
+			    <tr>
+			      <th>{{$b->nama_lengkap}}</th>
+			      <td>{{$b->pilihan_ruangan}}</td>
+			      <td>{{$b->warna_favorite}}</td>
+			      <td>{{$b->support}}%</td>
+			      <td>{{$b->confidence}}%</td>
+			    </tr>
+			</table>
 		  	@endforeach
 		  </div>
 

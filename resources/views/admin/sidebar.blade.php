@@ -64,6 +64,28 @@
           </li>
         </ul>
 
+         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="/support/confidence" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Analisa Algoritma Fp-Growth
+              </p>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="/support" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Hasil Analisa
+              </p>
+            </a>
+          </li>
+        </ul>
+
 <!--         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="/crudadmin" class="nav-link">

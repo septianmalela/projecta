@@ -112,4 +112,400 @@ class FpController extends Controller
            
         return back();
     }
+
+    public function supportconfidence(Request $request)
+    {
+        // $cariA =Fpgrowth::query()
+        //        ->where('support', 'LIKE', "%{$request->support}%") 
+        //        ->orWhere('confidence', 'LIKE', "%{$request->confidence}%") 
+        //        // ->orWhere('email', 'LIKE', "%{$searchTerm}%") 
+        //        ->get();
+        //         // return view('category',compact('categories'));
+
+      $Fpgrowth = DB::select(" SELECT * FROM fpgrowth WHERE support LIKE '$request->support' AND confidence LIKE '$request->confidence' ");
+      // dd($caria);
+      // $Fpgrowth1 = DB::select("SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1 ");
+      // dd($istp);
+      return view('support', ['fpgrowth' => $Fpgrowth]);
+      // $cariB = DB::select(" SELECT * FROM fpgrowth WHERE confidence like '%".$request->confidence."%' ");
+
+      // $cariC = DB::select(" SELECT * FROM fpgrowth WHERE '$cariA' AND '$cariB' ");
+    }
+
+    public function support()
+    {
+      // // $ambilwarna = DB::select(" SELECT * FROM fpgrowth WHERE mbti =  ");
+      $Fpgrowth = DB::select("(SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTJ' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFJ' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ISFP' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFJ' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTJ' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INFP' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'INTP' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTP' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFP' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFP' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTP' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESTJ' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ESFJ' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENFJ' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'BIRU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'PUTIH' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'HITAM' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'HIJAU' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'ORANGE' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'COKLAT' ORDER BY id DESC LIMIT 1)
+                               UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'PINK' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'ABU-ABU' ORDER BY id DESC LIMIT 1)
+                              UNION
+                              (SELECT * FROM fpgrowth WHERE mbti = 'ENTJ' AND warna_favorite = 'UNGU' ORDER BY id DESC LIMIT 1)
+                              ");
+      // $istpkuning = DB::select("SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'KUNING' ORDER BY id DESC LIMIT 1 ");
+
+      // $Fpgrowth = $istpmerah = $istpkuning;
+      // dd($Fpgrowth);
+
+      return view('hasilanalisa',['Fpgrowth'=>$Fpgrowth]);
+    }
 }
