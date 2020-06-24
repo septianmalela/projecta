@@ -1,48 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Jun 21, 2020 at 09:06 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.6
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `project`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `fpgrowth`
---
-
-CREATE TABLE `fpgrowth` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nama_lengkap` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pilihan_ruangan` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mbti` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `warna_favorite` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `support` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `confidence` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `fpgrowth`
---
-
 INSERT INTO `fpgrowth` (`id`, `nama_lengkap`, `pilihan_ruangan`, `mbti`, `warna_favorite`, `support`, `confidence`, `created_at`, `updated_at`) VALUES
 (1, 'novianti', 'RUANG KELUARGA', 'ISTJ', 'MERAH', '1', '100', '2020-06-21 00:53:53', '2020-06-21 00:53:53'),
 (2, 'novianti', 'RUANG KELUARGA', 'ISTJ', 'MERAH', '1', '33.333333333333', '2020-06-21 00:53:55', '2020-06-21 00:53:55'),
@@ -1509,28 +1464,3 @@ INSERT INTO `fpgrowth` (`id`, `nama_lengkap`, `pilihan_ruangan`, `mbti`, `warna_
 (1460, 'Septian', 'RUANG TIDUR', 'ENTJ', 'UNGU', '4', '50', '2020-06-21 02:04:53', '2020-06-21 02:04:53'),
 (1461, 'Septian', 'RUANG TIDUR', 'ENTJ', 'UNGU', '4', '44.444444444444', '2020-06-21 02:04:54', '2020-06-21 02:04:54'),
 (1462, 'Septian', 'RUANG TIDUR', 'ENTJ', 'UNGU', '5', '50', '2020-06-21 02:04:56', '2020-06-21 02:04:56');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `fpgrowth`
---
-ALTER TABLE `fpgrowth`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `fpgrowth`
---
-ALTER TABLE `fpgrowth`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1463;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

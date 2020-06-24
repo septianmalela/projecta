@@ -41,8 +41,36 @@
 			      <td>{{$b->confidence}}%</td>
 			    </tr>
 			</table>
-		  	@endforeach
 		  </div>
+
+		  <div class="card">
+			<div class="card-header">
+				<h4 class="text-center">Analisa Fp-Growth</h4>
+			</div>
+
+			<table class="table table-borderless">
+				<tr>
+					<th class="text-uppercase">Jumlah Yang Memilih {{$b->mbti}}</th>
+					<th class="text-uppercase">Jumlah Yang Memilih Warna {{$b->warna_favorite}}</th>
+					<th class="text-uppercase">Jumlah Yang Memilih {{$b->pilihan_ruangan}}</th>
+					<th class="text-uppercase">Jumlah Yang Memilih {{$b->mbti}} => {{$b->warna_favorite}}</th>
+				</tr>
+
+				<tr>
+					<td class="text-uppercase">{{$b->jumlah_mbti}}</td>
+					<td class="text-uppercase">{{$b->jumlah_warna}}</td>
+					<td class="text-uppercase">{{$b->jumlah_pilihanruangan}}</td>
+					<td class="text-uppercase">{{$b->jumlahpilihanmbti}}</td>
+				</tr>
+			</table><br>
+
+			<div class="card">
+				<div class="card-header">
+					Jika User Memilih {{$b->mbti}}, Dan Pilihan Ruangannya Adalah {{$b->pilihan_ruangan}}, Maka Memilih Warna {{$b->warna_favorite}}
+				</div>
+		  	@endforeach
+			</div>
+		</div>
 
 		  <a href="/" class="btn btn-lg btn-primary">Kembali Ke Home</a>
 		</div>	

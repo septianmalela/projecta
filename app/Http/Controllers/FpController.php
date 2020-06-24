@@ -54,18 +54,8 @@ class FpController extends Controller
                      ->first();
             $first1 = Arr::first($A);
 
+            //MENGHITUNG CONFIDENCE
             $confidence = ($first / $first1) *100;
-
-            // dd($first,$first1,$confidence);
-
-            // // MENGHITUNG CONFIDENCE
-            // $C = DB::table('fpgrowth')
-            //          ->select(DB::raw(' round( ( (count(*)/160) / ((count(*)*2)/160) )*100) as CONFIDENCE'))
-            //          ->where('warna_favorite', '=' , $request->warna_favorite)
-            //          ->where('mbti', '=' , $request->mbti)
-            //          ->first();
-            // $first2 = Arr::first($C);
-            // dd($AB, $SUPPORTA, $CONFIDENCE);
 
             // UPDATE DATA KE TABLE HASIL UNTUK MENGISI SUPPORT A & CONFIDENCE
             $pluck = DB::table('fpgrowth')->pluck('id')->last();
@@ -76,6 +66,53 @@ class FpController extends Controller
             $affected1 = DB::table('fpgrowth')
               ->where('id', $pluck)
               ->update(['confidence' => $confidence]);
+
+              // MENGITUNG JUMLAH YANG MEMILIH MBTI
+              $jumlahmbti = DB::table('fpgrowth')
+                       ->select(DB::raw('count(*) as jumlahmbti'))
+                       ->where('mbti', '=' , $request->mbti)
+                       ->first();
+              $Firstjumlahmbti = Arr::first($jumlahmbti);
+
+              //MENGHITUNG JUMLAH YANG MEMILIH WARNA FAVORITE
+              $jumlahwarna = DB::table('fpgrowth')
+                       ->select(DB::raw('count(*) as jumlahmbti'))
+                       ->where('warna_favorite', '=' , $request->warna_favorite)
+                       ->first();
+              $firstjumlahwarna = Arr::first($jumlahwarna);
+
+              // MENGHITUNG JUMLAH YANG MEMILIH PILIHAN RUANGAN
+              $jumlahpilihanruangan = DB::table('fpgrowth')
+                       ->select(DB::raw('count(*) as jumlahmbti'))
+                       ->where('pilihan_ruangan', '=' , $request->pilihan_ruangan)
+                       ->first();
+              $firstjumlahpilihanruangan = Arr::first($jumlahpilihanruangan);
+
+              //MENGHITUNG JUMLAH YANG MEMILIH MBTI => WARNA FAVORITE
+              $jumlahmbtipilihan = DB::table('fpgrowth')
+                       ->select(DB::raw('count(*) as jumlahmbti'))
+                       ->where('mbti', '=' , $request->mbti)
+                       ->where('pilihan_ruangan', '=' , $request->pilihan_ruangan)
+                       ->first();
+              $firstjumlahmbtipilihan = Arr::first($jumlahmbtipilihan);
+
+              //UPDATE KE TABLE
+              $affected1 = DB::table('fpgrowth')
+                      ->where('id', $pluck)
+                      ->update(['jumlah_mbti' => $Firstjumlahmbti]);
+
+              $affected1 = DB::table('fpgrowth')
+                      ->where('id', $pluck)
+                      ->update(['jumlah_warna' => $firstjumlahwarna]);
+
+              $affected1 = DB::table('fpgrowth')
+                      ->where('id', $pluck)
+                      ->update(['jumlah_pilihanruangan' => $firstjumlahpilihanruangan]);
+
+              $affected1 = DB::table('fpgrowth')
+                      ->where('id', $pluck)
+                      ->update(['jumlahpilihanmbti' => $firstjumlahmbtipilihan]);
+              // dd($firstjumlahmbti,$firstjumlahwarna,$firstjumlahpilihanruangan,$firstjumlahmbtipilihan);
 
             // dd($SUPPORTAUB, $SUPPORTA,$CONFIDENCE);
 
@@ -122,7 +159,8 @@ class FpController extends Controller
         //        ->get();
         //         // return view('category',compact('categories'));
 
-      $Fpgrowth = DB::select(" SELECT * FROM fpgrowth WHERE support LIKE '$request->support' AND confidence LIKE '$request->confidence' ");
+      // $Fpgrowth = DB::select(" SELECT * FROM fpgrowth WHERE support LIKE '$request->support' AND confidence LIKE '$request->confidence' ");
+      $Fpgrowth = DB::select(" SELECT * FROM fpgrowth WHERE support LIKE '$request->support' ");
       // dd($caria);
       // $Fpgrowth1 = DB::select("SELECT * FROM fpgrowth WHERE mbti = 'ISTP' AND warna_favorite = 'MERAH' ORDER BY id DESC LIMIT 1 ");
       // dd($istp);

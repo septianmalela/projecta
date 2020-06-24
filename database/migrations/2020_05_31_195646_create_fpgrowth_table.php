@@ -19,6 +19,10 @@ class CreateFpgrowthTable extends Migration
             $table->string('pilihan_ruangan');
             $table->string('mbti');
             $table->string('warna_favorite');
+            $table->string('jumlah_mbti')->nullable();
+            $table->string('jumlah_warna')->nullable();
+            $table->string('jumlah_pilihanruangan')->nullable();
+            $table->string('jumlahpilihanmbti')->nullable();
             $table->string('support')->nullable();
             $table->string('confidence')->nullable();
             $table->timestamps();

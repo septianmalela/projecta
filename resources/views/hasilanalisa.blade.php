@@ -26,7 +26,7 @@
 	        	@foreach($Fpgrowth as $no => $e)
 	        	<tr>
 	              <td>{{++$no}}</td>
-	              <td>Jika User Memilih {{$e->mbti}}, Maka Memilih {{$e->warna_favorite}}</td>
+	              <td>Jika User Memilih {{$e->mbti}}, Dan Pilihan Ruangannya Adalah {{$e->pilihan_ruangan}}, Maka Memilih Warna {{$e->warna_favorite}} </td>
 	              <td>{{$e->support}}</td>
 	              <td>{{$e->confidence}}</td>
 	            </tr>

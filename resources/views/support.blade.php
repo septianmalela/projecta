@@ -11,13 +11,13 @@
 		<!-- {{csrf_field()}} -->
 		<div class="col-3">
 			<h5>Masukkan Min Support %</h5>
-			<input type="text" class="form-control" name="support"><br>
+			<input type="text" class="form-control" name="support" required><br>
 		</div>
-
+<!-- 
 		<div class="col-3">
 			<h5>Masukkan Min Confidence %</h5><br>
-			<input type="text" class="form-control" name="confidence"><br>
-		</div>
+			<input type="text" class="form-control" name="confidence" required><br>
+		</div> -->
 		
 		<div class="col-3">
 			<input type="submit" class="btn btn-lg btn-success"></input>
